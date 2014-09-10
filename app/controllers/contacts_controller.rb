@@ -71,4 +71,8 @@ class ContactsController < ApplicationController
     def contact_params
       params.require(:contact).permit(:name, :phone, :email, :adress)
     end
+
+	def search
+  		@contacts = Contact.search params[:search]
+	end
 end
